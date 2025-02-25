@@ -1,0 +1,62 @@
+
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import ChercheAchat from '../components/home/ChercheAchat';
+import Location from '../components/home/Location';
+import LocationVacances from '../components/home/LocationVacances';
+import Vente from '../components/home/Vente';
+import ChercheLocation from '../components/home/ChercheLocation';
+import SearchComponent from '../components/SearchComponent';
+import PriceRangeFilter from '../redux/reducers/PriceRangeFilter';
+import Echange from '../components/home/Echange';
+
+const Home = () => {
+    const { homePosts } = useSelector(state => state);
+    const [showModal, setShowModal] = useState(false);
+    const [filters, setFilters] = useState({ subCategory: "", title: "", wilaya: "", commune: "" });
+    const [appliedFilters, setAppliedFilters] = useState({ subCategory: "", title: "", wilaya: "", commune: "" });
+
+    const handleChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
+    const handleOpenModal = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);
+    const handleSearch = () => { setAppliedFilters({ ...filters }); setShowModal(false); };
+    const handleResetFilters = () => { setFilters({ subCategory: "", title: "", wilaya: "", commune: "" }); setAppliedFilters({ subCategory: "", title: "", wilaya: "", commune: "" }); };
+
+
+    return (
+        <div className="home-container">
+              <button className="search-button" onClick={handleOpenModal}>🔍 Buscar</button>
+         
+            <Vente filters={appliedFilters} />
+            <Location filters={appliedFilters} />
+            <Echange filters={appliedFilters} />
+            <LocationVacances filters={appliedFilters} />
+            <ChercheAchat filters={appliedFilters} />
+            <ChercheLocation filters={appliedFilters} />
+             {showModal && (
+                <div className="modalcontainer">
+                    <div className="modall">
+                        <h2>Buscar Propiedades</h2>
+                        <select name="subCategory" onChange={handleChange} value={filters.subCategory}>
+                            <option value="">Sub Category</option>
+                            {Object.keys({ Vente: [], Location: [], Location_Vacances: [], Echange: [], Cherche_Achat: [], Cherche_Location: [] }).map(cat => (
+                                <option key={cat} value={cat}>{cat.replace('_', ' ')}</option>
+                            ))}
+                        </select>
+                        <SearchComponent filters={filters} setFilters={setFilters} />
+                        <PriceRangeFilter filters={filters} setFilters={setFilters} />
+
+                        <div className="modal-buttons">
+                            <button className="search-btn" onClick={handleSearch}>Buscar</button>
+                            <button className="reset-btn" onClick={handleResetFilters}>Restaurar Categorías</button>
+                            <button className="close-btn" onClick={handleCloseModal}>Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {homePosts.loading && <p>Cargando...</p>}
+        </div>
+    );
+};
+
+export default Home;

@@ -1,0 +1,71 @@
+/* Estilos generales */
+.product-details {
+    font-family: Arial, sans-serif;
+    width: 1200px; /* Ancho máximo más grande para pantallas grandes */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.detail-label {
+    width: 30%; /* Ancho de la etiqueta */
+    font-weight: bold;
+    color: #333;
+}
+
+.detail-value {
+    width: 70%; /* Ancho del valor */
+    color: #777; /* Color más claro para los valores */
+    font-weight: normal; /* Peso de fuente normal */
+    text-align: right; /* Alinea los valores a la derecha */
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+/* Estilos responsive */
+@media (max-width: 1200px) {
+    .product-details {
+        max-width: 90%; /* Ancho del 90% en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-details {
+        max-width: 100%; /* Ancho del 100% en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .detail-label, .detail-value {
+        width: 100%; /* Ocupa todo el ancho en móviles */
+        text-align: left;
+    }
+}

@@ -1,0 +1,58 @@
+ 
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Encabezado del modal */
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #940614; /* Rojo (peligro) */
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Botón de cerrar */
+.modal-header .close {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  padding: 20px;
+  max-height: 400px; /* Evita que sea demasiado grande */
+  overflow-y: auto;
+}
+
+/* Estilos para los campos de entrada */
+ 
+
+/* Estilos para los checkboxes */
+ 
+/* Pie del modal */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

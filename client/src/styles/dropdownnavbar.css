@@ -1,0 +1,71 @@
+:root {
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --color-primary: #6366f1;
+    --color-border: #e5e7eb;
+    --color-hover: #f3f4f6;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility var(--transition-speed) ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-hover);
+    color: var(--color-primary);
+}
+
+.language {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--color-border);
+     
+}
+
+.dropdown-divider {
+    border-top: 1px solid var(--color-border);
+    margin: 10px 0;
+}
+
+/* Animación suave para el tema */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dropdown-menu .dropdown-item {
+    animation: fadeIn 0.5s ease;
+}

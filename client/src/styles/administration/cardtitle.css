@@ -1,0 +1,49 @@
+.cardtitle {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 7px; /* Padding general de la card */
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    padding-left: 0; /* Asegura que no haya padding a la izquierda */
+}
+
+.title-post {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 0; /* Asegura que no haya margen a la izquierda */
+    padding-left: 0; /* Asegura que no haya padding a la izquierda */
+}
+.title0, .title2, .title3 {
+    margin: 0; /* Elimina el margen para que estén pegados */
+    font-size: 17px; /* Tamaño de fuente */
+    color: rgb(10, 9, 9); /* Color de texto */
+}
+
+.title0 {
+    font-weight: bold; /* Negrita para el título principal */
+}
+
+.titlelocation {
+    display: flex;
+    gap: 10px; /* Espacio entre los elementos de ubicación */
+    font-size: 15px;
+    color: rgb(56, 56, 56); /* Color de texto más suave */
+}
+
+.icon-edit {
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+    color: #666; /* Color del ícono */
+    font-size: 16px; /* Tamaño del ícono */
+}
+
+.icon-edit:hover {
+    color: #333; /* Cambia el color al pasar el mouse */
+}

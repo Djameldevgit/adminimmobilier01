@@ -1,0 +1,84 @@
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import BloquearUsuarios from "./BloquearUsuarios";
+import UserCard from "../UserCard";
+
+const ListaUsuariosBloqueados = () => {
+  const { userBlockReducer } = useSelector((state) => state);
+  const [openModalBloqueo, setOpenModalBloqueo] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  const formatDate = (date) => {
+    return moment(date).format("DD/MM/YYYY");
+  };
+
+  const handleOpenModal = (user) => {
+    setSelectedUser(user);
+    setOpenModalBloqueo(true);
+  };
+
+  return (
+
+    <div className="table-responsive">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Fecha de registro</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.isArray(userBlockReducer.blockedUsers) &&
+            userBlockReducer.blockedUsers.length > 0 ? (
+            userBlockReducer.blockedUsers.map((block, index) => (
+              <tr key={block._id}>
+                <td>{index + 1}</td>
+                <td>
+                  <UserCard user={block.user} />
+                </td>
+                <td>{block.user?.email}</td>
+                <td>{formatDate(block.fechaBloqueo)}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleOpenModal(block.user)}
+                  >
+                    Bloquear
+                  </button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="5">No hay usuarios bloqueados</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+      {
+    openModalBloqueo && (
+      <div>
+        <BloquearUsuarios
+          setOpenModalBloqueo={setOpenModalBloqueo}
+          user={selectedUser}
+        />
+      </div>
+    )
+  }
+
+    </div>
+
+
+
+  )
+
+  
+}
+
+
+
+export default ListaUsuariosBloqueados;
