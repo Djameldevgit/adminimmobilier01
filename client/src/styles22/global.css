@@ -92,7 +92,7 @@ img {
 @import url("./administration/searchuser.css");
 @import url("./administration/modalbloquear.css");
 @import url("./administration/modalusuariosbloqueados.css");
- 
+@import url("./administration/cardfooterlikescomments.css");
 @import url("./administration/mdalautenticacionusuarios.css");
 @import url("./administration/usericon.css");
  
@@ -100,8 +100,6 @@ img {
 @import url("./administration/descripcionpost.css");
 @import url("./administration/cardtitle.css");
 @import url("./administration/cardtitlefooterpost.css");
- 
- @import url("./administration/modalbusquedaavanzada.css"); 
 @media (max-width: 766px){
   .header .navbar .logo{
     display: none;

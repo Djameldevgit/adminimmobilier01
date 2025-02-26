@@ -1,0 +1,165 @@
+/* Estilos para el fondo del modal */
+.modal-busqueda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content-busqueda {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px; /* Ancho máximo del modal */
+    max-height: 90vh; /* Altura máxima del modal */
+    overflow-y: auto; /* Permite hacer scroll si el contenido es muy largo */
+    position: relative; /* Necesario para posicionar el botón de cierre */
+}
+
+/* Estilos para el botón de cierre en la esquina superior derecha */
+.close-top-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-top-btn:hover {
+    color: #dc3545; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para el título del modal */
+.modal-content-busqueda h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para los select y inputs */
+.select-busqueda,
+.search-component input,
+.price-range-filter input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Estilos específicos para los selects */
+.select-busqueda {
+    appearance: none; /* Elimina el estilo por defecto del select */
+      background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+.select-busqueda:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilos para los botones del modal */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem; /* Espacio entre botones */
+    margin-top: 1.5rem;
+}
+
+.modal-buttons button {
+    flex: 1; /* Hace que todos los botones tengan el mismo ancho */
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0; /* Evita que los botones se desborden */
+}
+
+/* Estilo para el botón de buscar */
+.search-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el botón de restaurar */
+.reset-btn {
+    background-color: #7d6c6c;
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.reset-btn span {
+    color: #fff;
+    font-size: 2em;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el botón de cerrar */
+.close-btn {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.close-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .modal-content-busqueda {
+        padding: 1.5rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column; /* Apila los botones verticalmente */
+        gap: 0.2rem; /* Reduce el espacio entre botones */
+    }
+
+    .modal-buttons button {
+        width: 100%; /* Asegura que los botones ocupen el 100% del ancho */
+        margin-bottom: 0; /* Elimina el margen inferior */
+    }
+
+    .close-top-btn {
+        top: 5px;
+        right: 5px;
+        font-size: 1.25rem;
+    }
+}

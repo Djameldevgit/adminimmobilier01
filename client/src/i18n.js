@@ -36,7 +36,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "email_help": "We'll never share your email with anyone else.",
         "no_account": "You don't have an account?",
         "register_now": "Register Now",
-        
+
         "usermanagement": "User management",
         "complaints": "complaints",
         "activityusers": "Activity users",
@@ -77,7 +77,30 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "Close": "Close",
         "Save": "Save",
 
+        "Rental search result...": "Rental search result...",
+        "There are no rental posts that match the filters...": "There are no rental posts that match the filters...",
+
+        "Search result cherche achat...": "Search result cherche achat...",
+        "There are no posts from cherche achat that match the filters...": "There are no posts from cherche achat that match the filters...",
+
+        "Search result search location...": "Search result search location...",
+        "No search match filter looking for location...": "No search match filter looking for location...",
+
+        "Search result for vacation rental...": "Search result for vacation rental...",
+        "There are no vacation rental publications that match the filters...": "There are no vacation rental publications that match the filters...",
+
+        "Exchange search result...": "Exchange search result...",
+        "No Exchange search match filter...": "No Exchange search match filter...",
+
+        "Search results sales...": "Search results sales...",
+        "There are no sales posts that match the filters...": "There are no sales posts that match the filters...",
+     "See more articles": "See more articles",
+      "Advanced search...":"Advanced search...",
+      "Select fields": "Select fields",
+      "Category...":"Category...",
       }
+
+
     },
 
     fr: {
@@ -142,6 +165,34 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "Story": "Histoire",
         "Close": "Fermer",
         "Save": "Sauvegarder",
+
+        "Rental search result...": "Résultat de la recherche de location...",
+        "There are no rental posts that match the filters...": "Il n'y a aucun message de location qui correspond aux filtres...",
+
+        "Search result cherche achat...": "Résultat de la recherche cherche achat...",
+        "There are no posts from cherche achat that match the filters...": "Il n’y a aucune publication de cherche achat qui correspond aux filtres...",
+
+        "Search result search location...": "résultat de cherche location...",
+        "No search match filter looking for location...": "Aucun filtre de correspondance de recherche cherche achat...",
+
+        "Search result for vacation rental...": "Résultat de recherche location de vacances...",
+        "There are no vacation rental publications that match the filters...": "Aucun article de location de vacances ne correspond aux filtres...",
+
+        "Exchange search result...": "Résultat de la recherche d'échange...",
+        "No Exchange search match filter...": "Aucun filtre de correspondance de recherche Exchange...",
+
+        "Search results sales...": "Résultats de recherche ventes...",
+        "There are no sales posts that match the filters...": "Il n'y a aucune publication de vente qui correspond aux filtres...",
+
+        "See more articles":  "Voir plus d'articles",
+        "Advanced search...":"Recherche avancée...",
+         
+        "Select fields": "Sélectionnez les champs",
+        "Category...":"Catégorie..."
+        
+
+
+
       }
     },
     ar: {
@@ -233,7 +284,31 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         "Website": "موقع الويب",
         "Story": "وصفي",
         "Close": "غلق",
-       "Save": "حفظ",
+        "Save": "حفظ",
+
+        "Rental search result...": "...نتائج البحث عن الإيجار",
+        "There are no rental posts that match the filters...": "...لا توجد رسائل تأجير تطابق عامل التصفية",
+
+        "Search result cherche achat...": "...نتائج البحث عن شراء",
+        "There are no posts from cherche achat that match the filters...": "...لا توجد مشاركات من البحث عن الشراء تطابق عوامل التصفية",
+
+        "Search result search location...": "...نتائج البحث عن الإيجار",
+        "No search match filter looking for location...": "...لا يوجد مرشح مطابق للتأجير",
+
+        "Search result for vacation rental...": "...نتائج البحث عن ايجار",
+        "There are no vacation rental publications that match the filters...": "...لا يوجد بحث عن إيجارات العطلات يتطابق مع عوامل التصفية",
+
+        "Exchange search result...": "...نتائج البحث تبادل",
+        "No Exchange search match filter...": "...لا توجد نتائج بحث للتبادل",
+
+        "Search results sales...": "...نتائج البحث عن المبيعات",
+        "There are no sales posts that match the filters...": "...لا توجد منشورات مبيعات تطابق عوامل التصفية",
+        "See more articles":  "رؤية المزيد من المقالات",
+        "Advanced search...":"...بحث متقدم",
+        "Select fields": "اختيار المعلومات",
+        "Category...":"Catégorie..."
+
+
       }
     },
 

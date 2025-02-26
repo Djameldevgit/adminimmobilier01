@@ -1,0 +1,80 @@
+/* Estilos base */
+.description-container {
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 2px;
+}
+
+.description-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre elementos */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre ícono y texto */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+    font-weight: bold;
+    color: #0077b6;
+}
+
+.info-item:last-child {
+    border-bottom: none; /* Elimina la línea del último elemento */
+}
+
+.info-item i {
+    color: #4c93af; /* Color azul para los íconos */
+    font-size: 18px;
+}
+
+.info-item span {
+    color: #333; /* Color oscuro para el texto */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .description-container {
+        padding: 15px;
+    }
+
+    .description-title {
+        font-size: 20px;
+    }
+
+    .info-item {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        align-items: flex-start;
+        padding: 8px;
+    }
+
+    .info-item i {
+        margin-bottom: 5px; /* Espacio entre ícono y texto en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .description-title {
+        font-size: 18px;
+    }
+
+    .info-item {
+        font-size: 14px;
+    }
+}

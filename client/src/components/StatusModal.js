@@ -327,7 +327,7 @@ const StatusModal = () => {
     const subcategoryy = () => (
         <div className="form-group">
             <select name="subCategory" value={postData.subCategory} onChange={handleChangeInput} className="form-control" required>
-                <option value="">Sub Category</option>
+                <option value="">Catégorie...</option>
                 <option value="Vente">Vente</option>
                 <option value="Location">Location</option>
                 <option value="Location_Vacances">Location Vacances</option>
@@ -524,17 +524,7 @@ const StatusModal = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
                     {postData.subCategory === "Vente" && (

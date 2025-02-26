@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Menu from './Menu'
-import Search from './Search'
+ 
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next'
+import Searchheader from './Searchheader';
  
 const Header = () => { 
     const {languageReducer} = useSelector(state=>state)
@@ -22,7 +23,7 @@ const Header = () => {
 
                 </Link>
 
-                <Search />
+                <Searchheader />
  
                 <Menu />
             </nav>

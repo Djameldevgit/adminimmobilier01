@@ -35,10 +35,8 @@ const SearchComponent = ({ filters, setFilters }) => {
   return (
     <div>
       {/* Select para Wilaya */}
-      <label>Selecciona una Wilaya:</label>
-      <select value={wilaya} onChange={handleWilayaChange}>
-        <option value="">Seleccione una Wilaya</option>
-        {wilayaOptions.map((w, index) => (
+        <select value={wilaya} onChange={handleWilayaChange}>
+         {wilayaOptions.map((w, index) => (
           <option key={index} value={w}>
             {w}
           </option>
@@ -46,7 +44,7 @@ const SearchComponent = ({ filters, setFilters }) => {
       </select>
 
       {/* Select para Commune (dependiente de Wilaya) */}
-      <label>Selecciona una Commune:</label>
+     
       <select value={commune} onChange={handleCommuneChange} disabled={!wilaya}>
         <option value="">Seleccione una Commune</option>
         {communeOptions.map((c, index) => (
