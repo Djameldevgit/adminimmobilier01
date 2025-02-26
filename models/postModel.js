@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const postSchema = new mongoose.Schema({
- 
- 
+
+
   category: {
     type: String,
 
@@ -11,53 +11,51 @@ const postSchema = new mongoose.Schema({
     type: String,
 
   },
-  
- Vente: {
+
+  Vente: {
     type: String,
-  
+
   },
   Location: {
     type: String,
-  
+
   },
   Location_Vacances: {
     type: String,
-  
+
   },
   Echange: {
     type: String,
-  
+
   },
   Cherche_Location: {
     type: String,
-  
   },
+
   Cherche_Achat: {
     type: String,
-  
   },
 
-title: {
-  type: String,
-
-},
+  title: {
+    type: String,
+  },
 
   description: {
     type: String,
-
   },
+
   price: {
     type: String,
-
   },
+
   unidaddeprecio: {
     type: String,
-
   },
+
   oferta: {
     type: String,
-
   },
+
   change: {
     type: String,
 
@@ -99,7 +97,7 @@ title: {
     type: String,
 
   },
-  
+
   attributes: {
     type: Object, // Cambiar Map por Object
     default: {}   // Establecer un valor predeterminado

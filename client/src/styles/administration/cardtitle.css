@@ -1,29 +1,23 @@
-.cardtitle {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 7px; /* Padding general de la card */
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+ 
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4px;
+    margin-bottom: 1px;
     padding-left: 0; /* Asegura que no haya padding a la izquierda */
 }
 
 .title-post {
     display: flex;
-    gap: 8px;
+    gap: 5px;
     align-items: center;
-    margin-left: 0; /* Asegura que no haya margen a la izquierda */
+    margin-left: 10px; /* Asegura que no haya margen a la izquierda */
     padding-left: 0; /* Asegura que no haya padding a la izquierda */
 }
 .title0, .title2, .title3 {
     margin: 0; /* Elimina el margen para que estén pegados */
-    font-size: 17px; /* Tamaño de fuente */
+    font-size: 20px; /* Tamaño de fuente */
     color: rgb(10, 9, 9); /* Color de texto */
 }
 
@@ -33,9 +27,10 @@
 
 .titlelocation {
     display: flex;
-    gap: 10px; /* Espacio entre los elementos de ubicación */
+    gap: 7px; /* Espacio entre los elementos de ubicación */
     font-size: 15px;
     color: rgb(56, 56, 56); /* Color de texto más suave */
+    margin-left: 12px; /* Asegura que no haya margen a la izquierda */
 }
 
 .icon-edit {

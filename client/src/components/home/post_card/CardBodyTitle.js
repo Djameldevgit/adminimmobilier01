@@ -13,7 +13,7 @@ const CardBodyTitle = ({ post }) => {
                     <div className="title-post">
                         <div className="title0">{post.subCategory}</div>
                         <div className="title2">{post.title}</div>
-                        <div className="title3"> F {post.attributes.etage}</div>
+                        <div className="title3"> {post.attributes.piece}</div>
                     </div>
                 )}
 

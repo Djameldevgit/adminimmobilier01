@@ -59,7 +59,7 @@ const ChercheAchat = ({ filters }) => {
                     <h6 className="info-contact-title mr-3" style={{
                         display: 'flex',
                         justifyContent: languageReducer.language === 'ar' ? 'right' : 'flex-start', // Alinea a la derecha si es árabe
-                        flexDirection: 'row', // Para alinear los hijos verticalmente
+                        flexDirection: 'row', 
                     }}>
                         {t('There are no posts from cherche achat that match the filters...', { lng: languageReducer.language })}
                     </h6>

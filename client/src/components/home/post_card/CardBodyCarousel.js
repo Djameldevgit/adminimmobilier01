@@ -88,13 +88,14 @@ const CardBodyCarousel = ({ post }) => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
+                                zIndex:5,
                             }}
                             onClick={saved ? handleUnSavePost : handleSavePost}
                         >
                             <span
                                 className="material-icons"
                                 style={{
-                                    fontSize: '24px',
+                                    fontSize: '27px',
                                     color: saved ? '#ff8c00' : '#000',
                                 }}
                             >
@@ -107,18 +108,20 @@ const CardBodyCarousel = ({ post }) => {
                                 position: 'absolute',
                                 top: '10px',
                                 left: '10px',
-                                 
+                                
                                 display: 'flex',
                                 flexDirection: 'row',
                                 alignItems: 'center',
+                                zIndex:5,
                             }}
                         >
                             <span
                                 style={{
-                                    fontSize: '14px',
+                                    fontSize: '17px',
                                     fontWeight: 'bold',
                                     color: 'red',
                                     marginRight: '8px',
+                                    zIndex:5,
                                 }}
                             >
                                 {post.likes.length}
@@ -133,13 +136,14 @@ const CardBodyCarousel = ({ post }) => {
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
+                                     
                                 }}
                                 onClick={isLike ? handleUnLike : handleLike}
                             >
                                 <span
                                     className="material-icons"
                                     style={{
-                                        fontSize: '24px',
+                                        fontSize: '27px',
                                         color: isLike ? 'red' : '#000',
                                     }}
                                 >

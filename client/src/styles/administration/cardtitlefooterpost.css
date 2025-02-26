@@ -1,7 +1,7 @@
 .card_footer {
     border-top: 1px solid #e0e0e0; /* Línea separadora */
     padding-top: 8px; /* Espacio arriba del footer */
-    margin-top: 8px; /* Espacio entre el contenido y el footer */
+    margin-top: 5px; /* Espacio entre el contenido y el footer */
    
 }
 
@@ -15,8 +15,9 @@
 .card-price {
     display: flex;
     align-items: center; /* Alinea el precio y la unidad en la misma línea */
-    font-size: 15px;
+    font-size: 17px;
     color: #333; /* Color del texto */
+    margin-left: 3px;
     
 }
 
@@ -27,9 +28,10 @@
 
 .card-date {
     margin-top: 2px; /* Espacio entre el precio y la fecha */
-    font-size: 15px;
+    font-size: 17px;
     color: rgb(56, 56, 56); /* Color de texto más suave */
-    margin-left: 7px;
+    margin-left: 10px;
+   padding-bottom: 3px;
 }
 
 .text-dat {
@@ -38,14 +40,14 @@
 
 /* Estilos para el ícono de comentarios */
 .fa-comment-alt {
-    margin-right: 9px; /* Espacio entre el ícono y el número de comentarios */
+    margin-right: 13px; /* Espacio entre el ícono y el número de comentarios */
     
-    font-size: 18px;
+    font-size: 19px;
 }
 
 h6 {
     margin: 0; /* Elimina el margen predeterminado */
-    font-size: 14px;
+    font-size: 15px;
     font-weight:500;
     color: rgb(56, 56, 56); /* Color de texto más suave */
 

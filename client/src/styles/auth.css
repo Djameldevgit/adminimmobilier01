@@ -19,6 +19,7 @@
 }
 
 .auth_page form {
+
     background: var(--color-white);
     max-width: 400px;
     width: 100%;
@@ -26,6 +27,8 @@
     box-shadow: 0 4px 10px var(--color-shadow);
     padding: 10px 7px;
     border: none;
+    
+    margin-bottom: 100px;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 

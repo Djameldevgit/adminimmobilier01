@@ -57,13 +57,13 @@ const PostsPendientes = () => {
                     <thead className="thead-dark text-center">
                         <tr>
                             <th>#</th>
-                            <th>Imagen</th>
+                            <th>Image</th>
                             <th className="d-none d-md-table-cell">Total posts</th>
-                            <th>Título</th>
-                            <th>Usuario</th>
-                            <th>Estado</th>
-                            <th className="d-none d-md-table-cell">Fecha</th>
-                            <th>Acciones</th>
+                            <th>Títre</th>
+                            <th>Utilizateur</th>
+                            <th>Etat</th>
+                            <th className="d-none d-md-table-cell">Date</th>
+                            <th>Acction</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,7 +83,7 @@ const PostsPendientes = () => {
                                                 data-bs-target="#imageModal"
                                             />
                                         ) : (
-                                            <span>No hay imágenes</span>
+                                            <span>Pas des images</span>
                                         )}
                                     </td>
 
