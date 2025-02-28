@@ -22,7 +22,14 @@ const ProductDetail = ({ post }) => {
                         {post.attributes.piece}
                     </span>
                 </div>
-
+                <div className="info-item">
+                    <span className="info-label">  {post.subCategory}</span>
+                    <span className="info-value">
+                        {post.title}
+                        {(String(post.title).trim().toLowerCase() === "Immeuble" )  } {/* Muestra "F" solo si es "Villa" o "Appartement" */}
+                        {post.attributes.numerodeapartamientos} Appartements
+                    </span>
+                </div>
                 <div className="info-item">
                     <span className="info-label">Publié le: </span>
                     <span className="info-value">{new Date(post.createdAt).toLocaleDateString()} a las {new Date(post.createdAt).toLocaleTimeString()}</span>

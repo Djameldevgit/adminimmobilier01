@@ -41,15 +41,15 @@ function LanguageSelector() {
   }, [cookies.language, handleLanguageChange]);
 
   return (
-    <div className='language'>
+    <div className='language-button'>
     <button className="dropdown-item" onClick={() => handleLanguageChange('ar')}>
-  {t('Arabe', { lng: languageReducer.language })}
+  {t('AR', { lng: languageReducer.language })}
 </button>
 <button className="dropdown-item" onClick={() => handleLanguageChange('fr')}>
-  {t('frances', { lng: languageReducer.language })}
+  {t('FR', { lng: languageReducer.language })}
 </button>
 <button className="dropdown-item" onClick={() => handleLanguageChange('en')}>
-  {t('ingles', { lng: languageReducer.language })}
+  {t('EN', { lng: languageReducer.language })}
 </button>
 
   </div>

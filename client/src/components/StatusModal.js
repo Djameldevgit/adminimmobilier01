@@ -49,6 +49,7 @@ const StatusModal = () => {
             superficie: "",
             etage: "",
             piece: "",
+            numerodeapartamientos: "",
             promoteurimmobilier: false,
             parlepromoteurimmobilier: false,
             conditiondepeyement: [],
@@ -310,6 +311,7 @@ const StatusModal = () => {
                     superficie: status.attributes?.superficie || "",
                     etage: status.attributes?.etage || "",
                     piece: status.attributes?.piece || "",
+                    numerodeapartamientos:status.attributes?.numerodeapartamientos || "",
                     promoteurimmobilier: status.attributes?.promoteurimmobilier || false,
                     parlepromoteurimmobilier: status.attributes?.parlepromoteurimmobilier || false,
                     conditiondepeyement: status.attributes?.conditiondepeyement || [],
@@ -398,6 +400,20 @@ const StatusModal = () => {
             />
         </div>
     )
+
+const numerodeapartamientos = ()=>(
+    <div>
+    <input
+        type="number"
+        name="numerodeapartamientos"
+        value={postData.attributes.numerodeapartamientos}
+        onChange={handleChangeInput}
+        className="form-control"
+        placeholder="Nombre d’appartements"
+    />
+</div>
+ )
+
     const promoteurimmobilier = () => (
         <FormCheck
             type="checkbox"
@@ -726,7 +742,7 @@ const StatusModal = () => {
                                         {superficie()}
                                     </div>
                                     <div className="form-group"  >
-                                        {etage()}
+                                        {numerodeapartamientos()}
                                     </div>
                                     <div className="form-group">
                                         <label className="text-primary">Spécifications</label>

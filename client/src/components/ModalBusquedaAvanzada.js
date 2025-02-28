@@ -1,10 +1,9 @@
 import React from 'react';
-import PriceRangeFilter from './PriceRangeFilter';
+ 
 import SearchComponent from './SearchComponent';
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux';
-
-
+import PriceRangeFilter from './ranges/PriceRangeFilter';
 
 const ModalBusquedaAvanzada = ({  
     showModal, 

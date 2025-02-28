@@ -34,9 +34,10 @@
 
 .dropdown-item {
     display: block;
-    padding: 10px 20px;
+    padding: 7px 12px;
     color: var(--color-text);
     text-decoration: none;
+    font-weight: bold;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 

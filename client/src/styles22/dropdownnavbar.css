@@ -45,12 +45,7 @@
     color: var(--color-primary);
 }
 
-.language {
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--color-border);
-     
-}
-
+ 
 .dropdown-divider {
     border-top: 1px solid var(--color-border);
     margin: 10px 0;

@@ -71,14 +71,14 @@ const Menu = () => {
                             <div className='language'>
                                 <LanguageSelector />
                             </div>
-                            <Link className="dropdown-item" onClick={() =>  dispatch({ type: GLOBALTYPES.STATUS,payload:true })}> Ajouter un annnoces
+                            <Link className="dropdown-item" onClick={() => dispatch({ type: GLOBALTYPES.STATUS, payload: true })}> Ajouter un annnoces
                             </Link>
 
                             {/* Verificar si el usuario es administrador */}
                             {auth.user.role === "admin" && (
                                 <>
                                     <Link className="dropdown-item" to='/administracion/roles'>Roles</Link>
-                                   <Link className="dropdown-item" to='/administracion/listausuariosbloqueados'>Lista usuarios bloqueados</Link>
+                                    <Link className="dropdown-item" to='/administracion/listausuariosbloqueados'>Lista usuarios bloqueados</Link>
                                     <Link className="dropdown-item" to='/administracion/searchusers'>Search users</Link>
                                     <Link className="dropdown-item" to='/administracion/homepostspendientes'>Posts pendientes</Link>
                                 </>

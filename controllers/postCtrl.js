@@ -40,7 +40,7 @@ const postCtrl = {
     crearPostPendiente: async (req, res) => {
         try {
             const { postData, images } = req.body;
-            const { category, subCategory,  Vente, Location, Location_Vacances, Echange, Cherche_Location, Cherche_Achat, title, description, price, unidaddeprecio, oferta, change, wilaya, commune,
+            const { category, subCategory, Vente, Location, Location_Vacances, Echange, Cherche_Location, Cherche_Achat, title, description, price, unidaddeprecio, oferta, change, wilaya, commune,
                 quartier, email, telefono, contadordevisitas, informacioncontacto, activarcomentarios, duraciondelanuncio, attributes, } = postData || {};
 
             if (!title || !category || !subCategory) {
@@ -48,7 +48,7 @@ const postCtrl = {
             }
 
             const newPost = new Posts({
-                category, subCategory,  Vente, Location, Location_Vacances, Echange, Cherche_Location, Cherche_Achat, title, description, price, unidaddeprecio, oferta, change, wilaya, commune,
+                category, subCategory, Vente, Location, Location_Vacances, Echange, Cherche_Location, Cherche_Achat, title, description, price, unidaddeprecio, oferta, change, wilaya, commune,
                 quartier, email, telefono, contadordevisitas, informacioncontacto, activarcomentarios, duraciondelanuncio, attributes,
                 attributes,
                 images,
@@ -111,28 +111,44 @@ const postCtrl = {
 
     getPosts: async (req, res) => {
         try {
-            const { subCategory, title, wilaya,commune, minPrice, maxPrice } = req.query;
+            const { subCategory, title, wilaya, commune, minPrice, maxPrice, minRooms, maxRooms } = req.query;
             let filter = { estado: "aprobado" };
-    
+
             // 📌 Filtro por subCategory
             if (subCategory) {
                 filter.subCategory = subCategory;
             }
-    
+
             // 📌 Filtro por title (búsqueda parcial, sin distinción de mayúsculas/minúsculas)
             if (title) {
                 filter.title = { $regex: title, $options: "i" };
             }
-            if (minPrice && maxPrice) {
-                filter.price = { $gte: parseInt(minPrice), $lte: parseInt(maxPrice) };
-              }
+
+            // 📌 Filtro por rango de precio
+            if (minPrice || maxPrice) {
+                filter.price = {};
+                if (minPrice) filter.price.$gte = parseInt(minPrice);
+                if (maxPrice) filter.price.$lte = parseInt(maxPrice);
+            }
+
             // 📌 Filtro por wilaya (búsqueda exacta)
             if (wilaya) {
                 filter.wilaya = wilaya;
             }
+
+            // 📌 Filtro por commune (búsqueda exacta)
             if (commune) {
                 filter.commune = commune;
             }
+
+            // 📌 Filtro por número de habitaciones (rooms)
+            if (minRooms || maxRooms) {
+                filter.rooms = {};
+                if (minRooms) filter.rooms.$gte = parseInt(minRooms);
+                if (maxRooms) filter.rooms.$lte = parseInt(maxRooms);
+            }
+
+            // 📌 Aplicando paginación y búsqueda
             const features = new APIfeatures(Posts.find(filter), req.query).paginating();
             const posts = await features.query
                 .sort('-createdAt')
@@ -144,19 +160,19 @@ const postCtrl = {
                         select: "-password"
                     }
                 });
-    
+
             res.json({
                 msg: 'Success!',
                 result: posts.length,
                 posts
             });
-    
+
         } catch (err) {
             return res.status(500).json({ msg: err.message });
         }
     },
-    
-    
+
+
     /*
  
     getPosts: async (req, res) => {
@@ -185,7 +201,7 @@ const postCtrl = {
         try {
             const { category, subCategory, title, description, price, unidaddeprecio, oferta, change, wilaya, commune,
                 quartier, email, telefono, contadordevisitas, informacioncontacto, activarcomentarios, duraciondelanuncio, attributes, images } = req.body;
-    
+
             const post = await Posts.findOneAndUpdate(
                 { _id: req.params.id },
                 {
@@ -194,30 +210,30 @@ const postCtrl = {
                 },
                 { new: true } // 🔥 Esto devuelve el post actualizado
             )
-            .populate("user likes", "avatar username")
-            .populate({
-                path: "comments",
-                populate: {
-                    path: "user likes",
-                    select: "-password"
-                }
-            });
-    
+                .populate("user likes", "avatar username")
+                .populate({
+                    path: "comments",
+                    populate: {
+                        path: "user likes",
+                        select: "-password"
+                    }
+                });
+
             if (!post) {
                 return res.status(404).json({ msg: "Post not found" });
             }
-    
+
             // 🔥 Respuesta optimizada con el post actualizado
             res.json({
                 msg: "Post actualizado correctamente",
                 newPost: post
             });
-    
+
         } catch (err) {
             return res.status(500).json({ msg: err.message });
         }
     },
-    
+
     likePost: async (req, res) => {
         try {
             const post = await Posts.find({ _id: req.params.id, likes: req.user._id })
@@ -252,8 +268,8 @@ const postCtrl = {
     },
     getUserPosts: async (req, res) => {
         try {
-            const features = new APIfeatures(Posts.find({user: req.params.id}), req.query)
-            .paginating()
+            const features = new APIfeatures(Posts.find({ user: req.params.id }), req.query)
+                .paginating()
             const posts = await features.query.sort("-createdAt")
 
             res.json({
@@ -262,32 +278,32 @@ const postCtrl = {
             })
 
         } catch (err) {
-            return res.status(500).json({msg: err.message})
+            return res.status(500).json({ msg: err.message })
         }
     },
     getPost: async (req, res) => {
         try {
             const post = await Posts.findById(req.params.id)
-            .populate("user likes", "avatar username followers")
-            .populate({
-                path: "comments",
-                populate: {
-                    path: "user likes",
-                    select: "-password"
-                }
-            })
+                .populate("user likes", "avatar username followers")
+                .populate({
+                    path: "comments",
+                    populate: {
+                        path: "user likes",
+                        select: "-password"
+                    }
+                })
 
-            if(!post) return res.status(400).json({msg: 'This post does not exist.'})
+            if (!post) return res.status(400).json({ msg: 'This post does not exist.' })
 
             res.json({
                 post
             })
 
         } catch (err) {
-            return res.status(500).json({msg: err.message})
+            return res.status(500).json({ msg: err.message })
         }
     },
-    
+
     getPostsDicover: async (req, res) => {
         try {
 
