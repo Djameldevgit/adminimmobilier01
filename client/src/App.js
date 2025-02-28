@@ -14,7 +14,7 @@ import Homepostspendientes from './pages/administracion/homepostspendientes';
 
 
 import Alert from './components/alert/Alert';
-import Header from './components/header/Header';
+//import Header from './components/header/Header'; <Header/>
 import StatusModal from './components/StatusModal';
 import NotFound from './components/NotFound';
 import SocketClient from './SocketClient';
@@ -31,7 +31,7 @@ import { getBlockedUsers } from './redux/actions/userBlockAction';
 import io from 'socket.io-client';
 import { GLOBALTYPES } from './redux/actions/globalTypes';
 import Profile from './pages/profile';
-
+ 
 function App() {
   const { auth, status, modal, call } = useSelector(state => state);
   const dispatch = useDispatch();
@@ -62,7 +62,7 @@ function App() {
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
         <div className="main">
-          <Header />
+        
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}

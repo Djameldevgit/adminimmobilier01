@@ -13,22 +13,31 @@ const CardBodyTitle = ({ post }) => {
                     <div className="title-post">
                         <div className="title0">{post.subCategory}</div>
                         <div className="title2">{post.title}</div>
-                        <div className="title3"> {post.attributes.piece}</div>
+
+                        {(post.title === "Appartement" || post.title === "Villa") && (
+                            <div className="title3"> F {post.attributes.piece}</div>
+                        )}
+                        {(post.title === "Terrain") && (
+                            <div className="title3">   {post.attributes.superficie} M²</div>
+                        )}
+
                     </div>
                 )}
-
                 <div className="icon-edit">
                     <CardHeader post={post} />
                 </div>
 
             </div>
-
-            {!isDetailPage && (
-            <div className="titlelocation">
-                <div className="title4">{post.wilaya}</div>
-                <div className="title4">{post.commune}</div>
-            </div>
-             )}
+           
+            {!isDetailPage && (  
+           
+                <div className="titlelocation">
+          <span> <i className="fa fa-map-marker" ></i></span>
+                    <div className="title4">{post.wilaya}</div>
+                    <div className="title4">{post.commune},</div>
+                    <div ><span className="ml-1 mr-1 text-danger">{post.price}</span> <span>{post.unidaddeprecio}</span> </div>  
+                </div>
+            )}
 
         </div>
     );

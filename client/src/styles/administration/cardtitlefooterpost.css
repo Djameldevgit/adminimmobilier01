@@ -40,9 +40,9 @@
 
 /* Estilos para el ícono de comentarios */
 .fa-comment-alt {
-    margin-right: 13px; /* Espacio entre el ícono y el número de comentarios */
+    margin-right: 15px; /* Espacio entre el ícono y el número de comentarios */
     
-    font-size: 19px;
+    font-size: 15px;
 }
 
 h6 {

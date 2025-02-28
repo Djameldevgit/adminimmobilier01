@@ -28,22 +28,25 @@ const CardFooterCommentLikes = ({ post }) => {
         <>
             <div className="card_footer">
                 <div className="footer-content">
-                    
-                    <div className="card-date">
-                        <span className="mr-1"><i className='far fa-clock'></i>  </span>
-                    
+                    {/* Precio y unidad del precio */}
+                    <div className="card-price">
+                        <span className="mr-2">Prix:</span>
+                        <span className="mr-3 text-danger">{post.price}</span>
+                        <span>{post.unidaddeprecio}</span>
+                    </div>
+
+                    {/* Comentarios */}
+                    <h6 className="mt-0" style={{ cursor: "pointer" }} onClick={handleCommentClick}>
+                      {post.comments.length} <span> <i className="fas fa-comment-alt"></i></span> 
+                    </h6>
+                </div>
+
+                {/* Fecha de creación del post */}
+                <div className="card-date">
                     <small className="text-dat">
                         {moment(post.createdAt).fromNow()}
                     </small>
                 </div>
-
-                    
-                    <h6 className="mt-0" style={{ cursor: "pointer" }} onClick={handleCommentClick}>
-                  <span><i className='far fa-comment-alt'></i></span>    <span>commenter</span>  
-                    </h6>
-                </div>
-
-                
             </div>
 
             {/* Modal de autenticación */}

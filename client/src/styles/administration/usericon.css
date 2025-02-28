@@ -8,15 +8,14 @@
 /* Ícono de usuario */
 .user-icon {
     font-size: 1.2rem; /* Tamaño del ícono */
-    color: rgb(255, 2, 2); /* Color del ícono */
-    cursor: pointer;
+     cursor: pointer;
     padding: 0.5rem; /* Espaciado interno */
     transition: color 0.3s ease; /* Transición suave para el hover */
     margin-bottom: 7px;
 }
 
 .user-icon:hover {
-    color: #007bff; /* Cambia el color al hacer hover */
+    color: #92b3d6; /* Cambia el color al hacer hover */
 }
 
 /* Menú desplegable */

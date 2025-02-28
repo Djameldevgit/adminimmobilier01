@@ -2,14 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-const Searchheader = ({ setShowModal }) => {
+const Searchheader = ({ handleOpenModal }) => {
     const { languageReducer } = useSelector(state => state);
     const { t } = useTranslation();
-
-    // Función para abrir el modal
-    const handleOpenModal = () => {
-        setShowModal(true); // Abre el modal
-    };
 
     return (
         <div
@@ -25,9 +20,9 @@ const Searchheader = ({ setShowModal }) => {
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s ease',
                 maxWidth: '400px', // Ancho máximo del campo de búsqueda
-                margin: '0 auto',  
+                margin: '0 auto', // Centrar el campo de búsqueda
             }}
-            onClick={handleOpenModal}  
+            onClick={handleOpenModal} // Usa handleOpenModal directamente
         >
             {/* Icono de búsqueda */}
             <span
@@ -40,19 +35,22 @@ const Searchheader = ({ setShowModal }) => {
                 <i className='fas fa-search'></i>
             </span>
 
-            
+            {/* Texto del placeholder */}
             <span
                 style={{
                     fontSize: '1rem',
                     color: '#6c757d',
-                    flex: 1,  
+                    flex: 1, // Ocupar el espacio restante
                     display: 'flex',
-                    justifyContent: languageReducer.language === 'ar' ? 'right' : 'flex-start',  
-                    flexDirection: 'row', 
+                    justifyContent: languageReducer.language === 'ar' ? 'right' : 'flex-start', // Alinea a la derecha si es árabe
+                    flexDirection: 'row', // Para alinear los hijos verticalmente
                 }}
             >
                 {t('Advanced search...', { lng: languageReducer.language })}
             </span>
+
+
+            
         </div>
     );
 };

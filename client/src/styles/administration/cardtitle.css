@@ -17,12 +17,12 @@
 }
 .title0, .title2, .title3 {
     margin: 0; /* Elimina el margen para que estén pegados */
-    font-size: 20px; /* Tamaño de fuente */
+    font-size: 19px; /* Tamaño de fuente */
     color: rgb(10, 9, 9); /* Color de texto */
 }
 
 .title0 {
-    font-weight: bold; /* Negrita para el título principal */
+    font-weight:500 /* Negrita para el título principal */
 }
 
 .titlelocation {
@@ -36,7 +36,7 @@
 .icon-edit {
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
     color: #666; /* Color del ícono */
-    font-size: 16px; /* Tamaño del ícono */
+    font-size: 10px; /* Tamaño del ícono */
 }
 
 .icon-edit:hover {
