@@ -131,5 +131,5 @@ const PostsPendientes = () => {
         </div>
     );
 };
-
+ 
 export default PostsPendientes;

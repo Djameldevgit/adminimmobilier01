@@ -32,6 +32,7 @@ import io from 'socket.io-client';
 import { GLOBALTYPES } from './redux/actions/globalTypes';
 import Profile from './pages/profile';
 import Header from './components/header/Header';
+import { getPostsPendientes } from './redux/actions/postAproveAction';
 
 function App() {
   const { auth, status, modal, call } = useSelector(state => state);
@@ -59,6 +60,7 @@ function App() {
       dispatch(getUsers(auth.token));
       dispatch(getSuggestions(auth.token));
       dispatch(getNotifies(auth.token));
+      dispatch(getPostsPendientes(auth.token));
     }
   }, [dispatch, auth.token]);
 

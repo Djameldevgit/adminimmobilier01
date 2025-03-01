@@ -73,8 +73,7 @@ const Home = ({ showModal, setShowModal }) => {
     };
     const dispatch = useDispatch()
     const avatarSrc = auth?.user?.avatar;
-    const username = auth?.user?.username;
-
+    
     window.addEventListener('scroll', () => {
         if (window.location.pathname === '/') {
             scroll = window.pageYOffset

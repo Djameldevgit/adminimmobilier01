@@ -93,67 +93,7 @@ export const getPostsPendientes = (token) => async (dispatch) => {
         })
     }
 }
-
-/*
-export const updatePost = ({ postData, images, auth, status }) => async (dispatch) => {
-    
-    let media = [];
-    const imgNewUrl = images.filter(img => !img.url);
-    const imgOldUrl = images.filter(img => img.url);
-
-    // Verificar si hay imágenes nuevas o si la cantidad de imágenes ha cambiado
-    if (imgNewUrl.length > 0 || imgOldUrl.length !== status.images.length) {
-        try {
-            dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
-
-            // Subir imágenes si hay nuevas
-            if (imgNewUrl.length > 0) media = await imageUpload(imgNewUrl);
-
-            // Actualizar el post
-            const res = await patchDataAPI(`post/${status._id}`, {
-                ...postData, // Enviar todos los campos de postData
-                images: [...imgOldUrl, ...media], // Incluir imágenes actuales + nuevas
-            }, auth.token);
-
-            dispatch({ type: POST_TYPES_APROVE.UPDATE_POST, payload: res.data.newPost });
-            dispatch({ type: GLOBALTYPES.ALERT, payload: { success: res.data.msg } });
-
-        } catch (err) {
-            dispatch({
-                type: GLOBALTYPES.ALERT,
-                payload: { error: err.response.data.msg }
-            });
-        }
-    }
-};
-export const updatePost = ({postData, images, auth, status}) => async (dispatch) => {
-    let media = []
-    const imgNewUrl = images.filter(img => !img.url)
-    const imgOldUrl = images.filter(img => img.url)
-
-    if(status.title=== postData.title 
-        && imgNewUrl.length === 0
-        && imgOldUrl.length === status.images.length
-    ) return;
-
-    try {
-        dispatch({ type: GLOBALTYPES.ALERT, payload: {loading: true} })
-        if(imgNewUrl.length > 0) media = await imageUpload(imgNewUrl)
-
-        const res = await patchDataAPI(`post/${status._id}`, { 
-            ...postData, images: [...imgOldUrl, ...media] 
-        }, auth.token)
-
-        dispatch({ type: POST_TYPES_APROVE.UPDATE_POST, payload: res.data.newPost })
-
-        dispatch({ type: GLOBALTYPES.ALERT, payload: {success: res.data.msg} })
-    } catch (err) {
-        dispatch({
-            type: GLOBALTYPES.ALERT,
-            payload: {error: err.response.data.msg}
-        })
-    }
-}*/
+ 
 export const updatePost = ({ postData, images,wilaya, commune, auth, status }) => async (dispatch) => {
     let media = []
     const imgNewUrl = images.filter(img => !img.url)

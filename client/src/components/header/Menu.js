@@ -93,7 +93,7 @@ const Menu = () => {
                             <Link className="dropdown-item" to={`/profile/${auth.user._id}`}>Profile</Link>
                             <div className="dropdown-divider"></div>
                             <Link className="dropdown-item" to="/" onClick={() => dispatch(logout())}>
-                                Logout
+                            Se déconnecter
                             </Link>
                         </div>
                     </li>
@@ -105,9 +105,9 @@ const Menu = () => {
                             <div className='language'>
                                 <LanguageSelector />
                             </div>
-                            <Link className="dropdown-item" to='/login'>Login</Link>
+                            <Link className="dropdown-item" to='/login'>Se connecter</Link>
                             <div className="dropdown-divider"></div>
-                            <Link className="dropdown-item" to='/register'>Register</Link>
+                            <Link className="dropdown-item" to='/register'>S'inscrire</Link>
                         </div>
                     </div>
                 )}
