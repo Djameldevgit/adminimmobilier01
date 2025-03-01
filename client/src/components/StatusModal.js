@@ -46,7 +46,7 @@ const StatusModal = () => {
         activarcomentarios:false,
         duraciondelanuncio:'',
         attributes: {
-            superficie: "",
+            surface: "",
             etage: "",
             piece: "",
             numerodeapartamientos: "",
@@ -308,7 +308,7 @@ const StatusModal = () => {
                 activarcomentarios: status.activarcomentarios || false,
                 duraciondelanuncio: status.duraciondelanuncio || "",
                 attributes: {
-                    superficie: status.attributes?.superficie || "",
+                    surface: status.attributes?.surface || "",
                     etage: status.attributes?.etage || "",
                     piece: status.attributes?.piece || "",
                     numerodeapartamientos:status.attributes?.numerodeapartamientos || "",
@@ -368,8 +368,8 @@ const StatusModal = () => {
         <div>
             <input
                 type="number"
-                name="superficie"
-                value={postData.attributes.superficie}
+                name="surface"
+                value={postData.attributes.surface}
                 onChange={handleChangeInput}
                 className="form-control"
                 placeholder="Superficie en M²"
@@ -796,8 +796,8 @@ const numerodeapartamientos = ()=>(
                                         <div className="form-group">
                                             <input
                                                 type="number"
-                                                name="superficie"
-                                                value={postData.attributes.superficie}
+                                                name="surface"
+                                                value={postData.attributes.surface}
                                                 onChange={handleChangeInput}
                                                 className="form-control"
                                                 placeholder="Superficie en M²"
@@ -1202,8 +1202,8 @@ const numerodeapartamientos = ()=>(
                                         <div className="form-group">
                                             <input
                                                 type="number"
-                                                name="superficie"
-                                                value={postData.attributes.superficie}
+                                                name="surface"
+                                                value={postData.attributes.surface}
                                                 onChange={handleChangeInput}
                                                 className="form-control"
                                                 placeholder="Superficie en M²"
@@ -1492,8 +1492,8 @@ const numerodeapartamientos = ()=>(
                                         <div className="form-group">
                                             <input
                                                 type="number"
-                                                name="superficie"
-                                                value={postData.attributes.superficie}
+                                                name="surface"
+                                                value={postData.attributes.surface}
                                                 onChange={handleChangeInput}
                                                 className="form-control"
                                                 placeholder="Superficie en M²"
@@ -1868,8 +1868,8 @@ const numerodeapartamientos = ()=>(
                                         <div className="form-group">
                                             <input
                                                 type="number"
-                                                name="superficie"
-                                                value={postData.attributes.superficie}
+                                                name="surface"
+                                                value={postData.attributes.surface}
                                                 onChange={handleChangeInput}
                                                 className="form-control"
                                                 placeholder="Superficie en M²"
@@ -2277,8 +2277,8 @@ const numerodeapartamientos = ()=>(
                                         <div className="form-group">
                                             <input
                                                 type="number"
-                                                name="superficie"
-                                                value={postData.attributes.superficie}
+                                                name="surface"
+                                                value={postData.attributes.surface}
                                                 onChange={handleChangeInput}
                                                 className="form-control"
                                                 placeholder="Superficie en M²"

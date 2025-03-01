@@ -100,11 +100,11 @@ img {
 @import url("./administration/descripcionpost.css");
 @import url("./administration/cardtitle.css");
 @import url("./administration/cardtitlefooterpost.css");
-  @import url("./administration/modalbusquedaavanzada.css"); 
-
+  
   @import url("./administration/sidebar_dropdown.css"); 
-  @import url("./administration/languagedrawer.css"); 
-
+ 
+  @import url("./administration/rageslider.css"); 
+  @import url("./administration/modalsearchhome.css"); 
 @media (max-width: 766px){
   .header .navbar .logo{
     display: none;

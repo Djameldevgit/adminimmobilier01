@@ -33,20 +33,20 @@ const Vente = ({ filters }) => {
     result: 0,
   };
   
-  // 🏷️ Filtrado avanzado con precios (minPrice, maxPrice)
   const filteredPosts = ventasCategory.posts.filter((post) => {
     const postPrice = Number(post.price) || 0;
     const minPrice = Number(filters.minPrice) || 0;
-    const maxPrice = Number(filters.maxPrice) || 2000000; // Valor máximo predeterminado
-    
-    const postSurface = Number(post.surface) || 0; 
+    const maxPrice = Number(filters.maxPrice) || 2000000;
+
+    // Acceder a los valores dentro de attributes
+    const postSurface = Number(post.attributes?.surface) || 0; 
     const minSurface = Number(filters.minSurface) || 0;
-    const maxSurface = Number(filters.maxSurface) || 1000; // Valor máximo predeterminado
-    
-    const postRooms = Number(post.room) || 0;
+    const maxSurface = Number(filters.maxSurface) || 1000; 
+
+    const postRooms = Number(post.attributes?.piece) || 0;
     const minRooms = Number(filters.minRoom) || 0;
-    const maxRooms = Number(filters.maxRoom) || 10; // Valor máximo predeterminado
-  
+    const maxRooms = Number(filters.maxRoom) || 10; 
+
     return (
       (!filters.subCategory || post.subCategory.includes(filters.subCategory)) &&
       (!filters.title || post.title.includes(filters.title)) &&
@@ -56,7 +56,8 @@ const Vente = ({ filters }) => {
       (postSurface >= minSurface && postSurface <= maxSurface) && // ✅ Filtro por superficie en m²
       (postPrice >= minPrice && postPrice <= maxPrice) // ✅ Filtro por rango de precios
     );
-  });
+});
+
   
   
 

@@ -1,4 +1,168 @@
-/* Estilos para el fondo del modal */
+/* Variables CSS para colores y tamaños */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos base del modal */
+  .modal-busqueda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content-busqueda {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilos para los títulos y textos */
+  .modal-content-busqueda h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  /* Estilos para los selectores y inputs */
+  .select-busqueda,
+  .form-control,
+  input[type="number"] {
+    width: 100%;
+     
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .select-busqueda:focus,
+  .form-control:focus,
+  input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  /* Estilos para los botones */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .search-btn,
+  .reset-btn,
+  .close-btn {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .reset-btn {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .close-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .search-btn:hover,
+  .reset-btn:hover,
+  .close-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .search-btn:active,
+  .reset-btn:active,
+  .close-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Estilos para los mensajes de error */
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .modal-content-busqueda {
+      padding: 1rem;
+    }
+  
+    .modal-buttons {
+      flex-direction: column;
+    }
+  
+    .search-btn,
+    .reset-btn,
+    .close-btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Estilos para el botón de cierre (X) */
+.close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-icon:hover {
+    color: var(--primary-color);
+  }
+
+
+  /* Estilos para el fondo del modal */
 .modal-busqueda {
     position: fixed;
     top: 0;

@@ -74,10 +74,10 @@ const ProductDetail = ({ post }) => {
                 )}
 
                 
-                {post.attributes.superficie && (
+                {post.attributes.surface && (
                     <div className="info-item">
                         <span className="info-label">Superficie:</span>
-                        <span className="info-value">{post.attributes.superficie} M²</span>
+                        <span className="info-value">{post.attributes.surface} M²</span>
                     </div>
                 )}
                 {post.attributes.etage && (

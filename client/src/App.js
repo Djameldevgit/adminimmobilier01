@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 
 import Home from './pages/home';
@@ -27,12 +27,12 @@ import { getSuggestions } from './redux/actions/suggestionsAction';
 import { getNotifies } from './redux/actions/notifyAction';
 import { getUsers } from './redux/actions/userAction';
 import { getBlockedUsers } from './redux/actions/userBlockAction';
- 
+
 import io from 'socket.io-client';
 import { GLOBALTYPES } from './redux/actions/globalTypes';
 import Profile from './pages/profile';
 import Header from './components/header/Header';
- 
+
 function App() {
   const { auth, status, modal, call } = useSelector(state => state);
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function App() {
   const [filters, setFilters] = useState({ subCategory: "", title: "", wilaya: "", commune: "" });
   const [appliedFilters, setAppliedFilters] = useState({ subCategory: "", title: "", wilaya: "", commune: "" });
 
-  const handleChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
+  // const handleChange = (e) => setFilters({ ...filters, [e.target.name]: e.target.value });
   const handleSearch = () => { setAppliedFilters({ ...filters }); setShowModal(false); };
   const handleResetFilters = () => { setFilters({ subCategory: "", title: "", wilaya: "", commune: "" }); setAppliedFilters({ subCategory: "", title: "", wilaya: "", commune: "" }); };
 
@@ -75,19 +75,21 @@ function App() {
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}
-          
-          <Header 
-  handleOpenModal={() => setShowModal(true)}
-  filters={filters} 
-  setFilters={setFilters} 
-  handleSearch={handleSearch}
-  handleResetFilters={handleResetFilters}
-/>
 
-          
+          <Header
+            handleOpenModal={() => setShowModal(true)}
+            filters={filters}
+            setFilters={setFilters}
+            handleSearch={handleSearch}
+            handleResetFilters={handleResetFilters}
+           
+
+          />
+
+
           <Switch>
-            <Route exact path="/" render={() => 
-              <Home 
+            <Route exact path="/" render={() =>
+              <Home
                 showModal={showModal}
                 setShowModal={setShowModal}
                 filters={filters}

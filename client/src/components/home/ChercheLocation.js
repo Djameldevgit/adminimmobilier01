@@ -38,14 +38,26 @@ const ChercheLocation = ({ filters }) => {
     const minPrice = Number(filters.minPrice) || 0;
     const maxPrice = Number(filters.maxPrice) || 2000000; // Valor máximo predeterminado
 
+    // Acceder a los valores dentro de attributes
+    const postSurface = Number(post.attributes?.surface) || 0; 
+    const minSurface = Number(filters.minSurface) || 0;
+    const maxSurface = Number(filters.maxSurface) || 1000; 
+
+    const postRooms = Number(post.attributes?.piece) || 0;
+    const minRooms = Number(filters.minRoom) || 0;
+    const maxRooms = Number(filters.maxRoom) || 10; 
+
     return (
-      (!filters.subCategory || post.subCategory.includes(filters.subCategory) || filters.minPrice || filters.maxPrice) &&
-      (!filters.title || post.title.includes(filters.title)) &&
-      (!filters.wilaya || post.wilaya.includes(filters.wilaya)) &&
-      (!filters.commune || post.commune.includes(filters.commune)) &&
-      postPrice >= minPrice && postPrice <= maxPrice // Filtro por rango de precios
+        (!filters.subCategory || post.subCategory.includes(filters.subCategory)) &&
+        (!filters.title || post.title.includes(filters.title)) &&
+        (!filters.wilaya || post.wilaya.includes(filters.wilaya)) &&
+        (!filters.commune || post.commune.includes(filters.commune)) &&
+        (postRooms >= minRooms && postRooms <= maxRooms) && // ✅ Filtro por número de habitaciones
+        (postSurface >= minSurface && postSurface <= maxSurface) && // ✅ Filtro por superficie en m²
+        (postPrice >= minPrice && postPrice <= maxPrice) // ✅ Filtro por rango de precios
     );
-  });
+});
+
 
 
   return (
